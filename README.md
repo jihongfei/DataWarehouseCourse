@@ -7,6 +7,10 @@
  3. Web 端支持的不够好，复制需要选中后右键点击复制，粘贴需要右键选择粘贴
  4. 每周四晚24点前提交上周作业，周五会统计。
 
+# 课件汇总
+ 0. 请用PC端打开，选课件--Download
+ 1. Week-1: https://github.com/jihongfei/DataWarehouseCourse/tree/master/ppt/week1
+
 # 关于实验二
 	
  1. 作业是对日志文件dpkg.log做词频统计，别做错了！!
