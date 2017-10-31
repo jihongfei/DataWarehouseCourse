@@ -1,18 +1,22 @@
 # DataWarehouseCourse
 
 # 置顶公告
+
 ## 平台
  1. 请勿超时！目前单个实验时间是2h。
  2. 由于平台不稳定，做出结果后请在本地备份以防提交失败。
  3. Web 端支持的不够好，复制需要选中后右键点击复制，粘贴需要右键选择粘贴。
  4. 如无法正确打开网页请换Chrome+4g网试试。
+
 ## 作业
  1. 每周四晚24点前提交上周作业，周五会统计。
 
 # 课件汇总
  0. 请用PC端打开，选课件--Download
  1. Week-1: https://github.com/jihongfei/DataWarehouseCourse/tree/master/ppt/week1
- 2. 补充资料网盘地址：链接：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
+
+# 补充资料
+ 2. 网盘链接：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
 
 # 关于实验二
 	
