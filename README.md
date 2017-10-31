@@ -12,6 +12,7 @@
 # 课件汇总
  0. 请用PC端打开，选课件--Download
  1. Week-1: https://github.com/jihongfei/DataWarehouseCourse/tree/master/ppt/week1
+ 2. 补充资料网盘地址：链接：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
 
 # 关于实验二
 	
