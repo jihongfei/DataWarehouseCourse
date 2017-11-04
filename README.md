@@ -9,7 +9,7 @@
  4. 如无法正确打开网页请换Chrome+4g网试试。
 
 ## 作业
- 1. **第二周需完成实验四和实验五。**
+ 1. **第二周需完成实验四和实验五，只有实验五需要提交实验报告**
  3. 每周四晚24点前提交上周作业，周五会统计。
 
 # 课件
@@ -21,6 +21,9 @@
 	2. 修改并保存/etc/profile
 	3. Sudo service ssh start
 	4. 切回到hadoop用户，su - hadoop
+ 2. 如果无法关闭hbase可参考 http://blog.csdn.net/u010027484/article/details/51879262
+ 3. 把 ${user.name}和 替换为 hadoop，把 ${HBase-Dir} 替换为你机器上HBase的安装目录
+
 
 # 关于实验三
 	
