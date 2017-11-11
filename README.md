@@ -18,8 +18,7 @@
 # 关于实验六/七
  1. 关于数据导入的博文：https://www.iteblog.com/archives/949.html
  2. 关于分区表的博文：http://blog.sina.com.cn/s/blog_6ff05a2c0100tah0.html
- 3. 平台上实验指导流程有缺陷！请使用pdf版指导： 
- 	2. http://pan.baidu.com/s/1i5MlZr3 密码：7wvi
+ 3. 平台上实验指导流程有缺陷！请使用pdf版指导： http://pan.baidu.com/s/1i5MlZr3 密码：7wvi
 
 # 关于实验四
  1. 3.2-(2)-设置环境变量，这里需要按以下步骤先启动ssh服务：
