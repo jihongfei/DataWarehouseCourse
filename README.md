@@ -13,11 +13,12 @@
  3. 每周四晚24点前提交上周作业，周五会统计。
 
 # 课件
- 1. 网盘链接(**第二周课件已上传**)：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
+ 1. 网盘链接(**第三周课件--数据仓库基础和OLAP--已上传**)：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
 
 # 关于实验六/七
- 1. 博客分享：关于数据导入：https://www.iteblog.com/archives/949.html
- 2. 博客分享：关于分区表：http://blog.sina.com.cn/s/blog_6ff05a2c0100tah0.html
+ 1. 关于数据导入的博文：https://www.iteblog.com/archives/949.html
+ 2. 关于分区表的博文：http://blog.sina.com.cn/s/blog_6ff05a2c0100tah0.html
+ 3. 平台上实验指导流程有缺陷，请使用github上的pdf版指导： https://github.com/jihongfei/DataWarehouseCourse/tree/master/experiment
 
 # 关于实验四
  1. 3.2-(2)-设置环境变量，这里需要按以下步骤先启动ssh服务：
