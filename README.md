@@ -12,7 +12,7 @@
  1. 每周四晚24点前提交上周作业，周五会统计。
 
 # 课件
- 1. 网盘链接(**第四周课件--数据仓库建模--已上传**)：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
+ 1. 网盘链接：http://pan.baidu.com/s/1o7S6DoI 密码：6u73
 
 # 第五周实验内容
  1. 微信群和百度网盘（http://pan.baidu.com/s/1i5MlZr3 密码：7wvi）有pdf版
