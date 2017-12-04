@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://www.xiniuedu.com/lab.html?task_id=1004&lab_id=107 -->
+<html ng-app="" class="ng-scope js cssanimations"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title>稀牛实验室</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.xiniuedu.com/image/xiniulogo.ico">
+    <link rel="stylesheet" href="./xiniu_ex1_files/amazeui.min.css">
+    <link rel="stylesheet" href="./xiniu_ex1_files/app.css">
+    <link rel="stylesheet" href="./xiniu_ex1_files/index.css">
+    <link rel="stylesheet" href="./xiniu_ex1_files/login.css">
+    <!-- <link rel="stylesheet" href="css/amy.css"> -->
+    <link rel="stylesheet" type="text/css" href="./xiniu_ex1_files/codingMy.css">
+    <script type="text/javascript" async="" src="./xiniu_ex1_files/1e4ef4b2.js"></script><script src="./xiniu_ex1_files/jquery.js"></script>
+    <!-- 引入头部组件 -->
+    <script src="./xiniu_ex1_files/headerTemplate.js"></script>
+    <!-- 引入底部组件 -->
+    <script src="./xiniu_ex1_files/footerTemplater.js"></script>
+    <script src="./xiniu_ex1_files/socket.io.js"></script>
+    <script type="text/javascript" src="./xiniu_ex1_files/angular.min.js"></script>
+    <script src="./xiniu_ex1_files/getDeviceInfo.js"></script>
+    <style type="text/css">
+        .textunder {
+            width: 455px;
+            text-overflow: ellipsis;
+            text-decoration: underline;
+            color: #0070c0;
+        }
+        
+        .textunder:hover {
+            color: #666;
+        }
+        
+        #load_more {
+            color: #0070c0;
+            font-weight: 400;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 5px;
+            margin-top: 7px;
+        }
+        
+        #load_more:hover {
+            color: #000;
+            border: 1px solid #000;
+        }
+        
+        .mod-new {
+            background-color: #fff;
+            box-shadow: 0 0 6px 1px #e4e5e6;
+            /*box-shadow: 0 0 8px 1px #e4e5e6;*/
+        }
+        /*.mod{position:relative;margin-right:-20px}
+.mod:after{content:"";border-bottom:1px solid #e3e7e8;height:0;display:block;margin-right:20px}*/
+        
+        .p-base .p-btn {
+            display: inline-block;
+            width: 108px;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            background: #2fb3ff;
+            border-radius: 20px;
+        }
+        
+        .p-btn1 {
+            width: 108px;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            background: #2fb3ff;
+            border-radius: 20px;
+        }
+        
+        .p-btn {
+            display: inline-block;
+            width: 108px;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            background: #2fb3ff;
+            border-radius: 20px
+        }
+        
+        .lab-detail-left {
+            /*min-height: 290px !important;*/
+            min-height: 290px;
+            height: auto!important;
+            height: 290px;
+        }
+        
+        .avator-mode {
+            width: 30px;
+            height: 30px;
+            box-sizing: border-box;
+            border: 1px solid #d9dde1;
+            border-radius: 50px;
+            margin-top: 10px;
+            text-align: center;
+            overflow: hidden;
+            display: inline-table;
+            margin-right: 10px;
+        }
+        
+        .avator-img {
+            width: 46px;
+            height: 46px;
+            max-width: none;
+            cursor: pointer;
+        }
+        
+        #amz-header nav .al-nologin a {
+            margin-top: 10px !important;
+        }
+    </style>
+
+<link rel="stylesheet" type="text/css" href="chrome-extension://fidicgekecdkdmkjghdgadgdmcfodfid/themes/default/content.css"><script src="./xiniu_ex1_files/oc"></script><script src="./xiniu_ex1_files/oc(1)"></script></head>
+
+<body style="background:#f4f4f4"><header class="al-header am-topbar" id="amz-header" style="background: rgb(255, 255, 255); box-shadow: rgb(204, 204, 204) 2px 2px 6px;"><!-- 头部阴影 --><div id="attention" style="background-color: white; border-bottom: 1px solid rgba(152, 148, 148, 0.2); display: block;"><div class="am-container ad_container"><a id="top_ad" class="attention-c" href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" style="display: inline-block;width: 90%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color:#209afb;">强推 | Google&amp;微软数据科学家们给你讲Keras实战！7周实战课程！赶快点击报名吧！</a><span class="attention-close" id="attention-close" style="display: inline-block;cursor: pointer; color:#209afb;">×</span></div></div><div class="am-container am-cf" style="background-color:#fff;position:relative;"><span class="am-show-sm-show al-hide-lg-hide am-icon-search al-sm-search"></span><h1 id="companyLogo"><a href="http://www.xiniuedu.com/index.html">稀牛学院</a></h1><!--<button class="am-btn am-btn-primary am-show-sm-only"data-am-collapse="{target: '.amz-header-nav'}">--><!--<span class="am-sr-only">导航切换</span>--><!--<span class="am-icon-bars"></span>--><!--</button>--><nav class="al-ft"><ul class=""><li class="disappear"><a href="http://www.xiniuedu.com/labs.html" style="color:black;" target="">实验室</a></li><li class="disappear"><a href="http://www.xiniuedu.com/livecourse/direct_room/public/html/detailvideo.html?video=public" style="color:black;" target="">公开课</a></li><li class="disappear"><a href="http://www.xiniuedu.com/livecourse/direct_room/public/html/detailvideo.html?video=upcoming" style="color:black;" target="">精品课</a></li><!-- <li><a smallCourse/public/html/index.html href="/science" target="">代码下载</a></li> --><li class="user-info"><!--登录前--><div id="loginState" style="display: none;"><span class="nologin"><a href="javascript:void(0)" target="" id="loginin-a" style="padding-right: 10px; ">登录</a></span><span class="nologin"><a href="javascript:void(0)" target="" id="register-a">注册</a></span></div><!-- 登录之后，个人中心 --><div class="header-avator-mode" style="display: inline-block;"><img src="./xiniu_ex1_files/43.jpg" class="header-avator-img" id="enterCenter"><img src="./xiniu_ex1_files/43.jpg" class="header-avator-img" id="enterCenter"><!--<a href="javascript:void(0)" target="" id="userinfo"  v-show="code==='0'" onclick="userinfo"></a>--><div class=" legalize-icon" style="top: 65px; right: -16px; position: absolute; z-index: 120; display: none;"></div><!-- <a href="javascript:void(0)" target="" onclick="childreg" v-show="code==='0'">头像</a> --><div class="g-user-card"><div class="card-inner"><div class="card-top clearfix"><div class="card-top-username"><a href="javascript:void(0)" target="" id="userinfo" v-show="code===&#39;0&#39;" onclick="userinfo">201718019...</a></div></div><div class="user-center-box"><ul class="clearfix"><li class="center-li"><a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107#" data-enter="order" id="enterOrder"><!-- Diploma icon by Icons8 --><img class="icon icons8-Diploma" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAB4klEQVRoQ+2Z/TEEQRDFfxcBIkAGRIAIyAAZEAkZIAMiQAQuA0SACKhXtVM128bO1Fbvl5r+565qtrrf69fTO9O7YuG2Wjh+KoGpFfxLgR3gCtgD9H9KewPWwCWg/y1LERDgF2BzStSJ2J/AviWRInAPHM8MfIDzAJzE2FIEPmaY/YBZJbSbI/BdUGZjCtSJJ6VAJeAsT1XAlpnNiHPCf50O3BWoBDKS5RRvrffpQotXwLvmc/7c90AuoPe6O4HFl1AlULtQlIE+bdR7k+b8uW/iXEDv9UkInAIXzZ1ahHSnvQbuerAblYDu0Y8RcItXRI4A3W9LbVQCGgZoktFlTw2J2RFQyWgUU2LnwG3Jg8BoCtjsPwNnDUiBPYgAa+1wbgRspjQ9CIMozZpeDeDSseZoCthAW9FmXSQBbVbVuuwmUTKzVyBX4pWAMpTKgl4yG7n0TbT+bqfl/3K4q46hV/7cVPhq3vKtbwRdHzh0+NKxYHuicglhVTZKqN70RR84+uJNXTV1+lQ7VRu1VtqFOvG4OGkiWAICH44S+rUkXGK7OEkQiMGHDFoSLrFdnBgCKfApEi6xXZxEBLrAWxIusV2cREfmUPO5RqDnSu8Do23iHOhB1j0VGARgzmklkMvQ0Os/Gud8MRdp76gAAAAASUVORK5CYII=">我的订单</a></li><li class="center-li"><a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107#" data-enter="center" id="enterSet"><!-- Admin Settings Male icon by Icons8 --><img class="icon icons8-Admin-Settings-Male" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEfklEQVR4Xu2a/5ENQRDH+yJABIgAESACRIAIEAEiQASIABEgAkSACBAB9VHbV319PTuzOz2v3qt9XfX+uL3d2e5v/+7eE9k4nWxcfjkCcLSAjSNwdIGNG8AxCB5d4OgCu0XguojcEZFbInJRRPgb+ioiv0Xkk4h8mP7eCWe7coG7IvJCRK40SvVDRJ6IyPvG+1ffNhoABH49aXwNk1jEQxEBkCE0EgDM++Nk6j3M4xq3R7nFKAAQ/ktB6reTr+P3/CDu50dsuF947sYIEEYAgNkjPEHOEsHtcYM58/zLKVja57EEQEh1hxEAYPZo0hIBDaGWEGAROC0RE3CHNMoGgGj/LkF4PSIC4V5mdsgG4LtLdZg9oPQQqZDaQQkXuNpzoH02E4Ao8MFor88SEwDWUlpAzATgmYg8NVwS7R8kaeqNyw7PRYT3dVMmAASom4YjChgYzyCApKBS+txRXJ3hJxMAUp/W9rwkzUync21dQf3A+d2UCcBfx03m2Rw95PxMJocwaEAdcn4mAFRqFwzDI13gm3O31a6QCcDmgyCl7qMtp8HNF0Ion6rvsrECylhq9x6it7Dl9M8Fk6XqezNjAC/zBQvX1nSCyvjBNUMw7oMh1xDkVVUdZ28gnvgWOq0C1FdlWwDnEgsAwaZEruMOWEOtOaL5YQ7gu8g/09m15xfhPAKAORD4H/0BAJHL7Ujs2lTflxqozLriFKRRANRAWKIlNM+EScFa8mz13pEAKAil4WiVORHB57GIVLO3Lx4FAANRghjBzw9HWwQn1fFsy2Kkq0cYAQDBi959ieDEA12NIfQSc98rAIjeaK5ETIl0H6D7wBaLIDOU3KAVgPCMTAtA61EEx5wZX6FZtLyUtLgqTZhaACiekQVASXiELaUvYgQWMQeKrywtCEyKcTcPOmkWsJlIQ3NnpHwh4rtAr2EEZDqsgtqF6VyvEE2DORtrQqjaphmXAYxoeHo6re61gGgRgsnbhgimdYaH1mHIBsi5RUfUWyx1IX//GVfqAQAhmNdbYSha0AyB0I7IYQKNRFqrdXeZIJyLIz0A+D2Ar9iipshro7XQKbkZDRZmbktqALODGX0n957LUGsBiPzTLyuwDBjz7gBDgAWArQtTv3KrlcdRQxau1NYC4LWPGfNSH9EjRlq1rpqL4kxLYxRNqM7Fm7UAeI3MbYHUh5dqXQHwa7HQlAuRsTqnXANAhOylSj7Xur6lqfGFjZfNa59OUddmKILYozT3pcr/e9YA4MdUGStwK2QNAM+ztcbIz2fPWwOA39dnLkEBYikAdiETpdR0AHx645MVa3a9hUoNgMgFdAtNvBnuAr9c8dMSkXtA2bsg2NJ99Qjsn93LNJgpYMtZfuFS+3gy+kgzLLnXBMEWhrPvKZXCXNchC+9EcD60jIYy4Wc1hwDA3jZD2VqOzssUXs9Pa4dHA1AaiGDKABM1WZYnfJ4M4tty7kkbiIwGYW6cRXbg5z+uJiZQrOlIffhIbFcg7PVQdDQIBzEWHw1C6fyuwuwQ0mAN2C4A/gFQHRlMm+5MVwAAAABJRU5ErkJggg==">个人设置</a></li><li class="center-li"><a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107#" data-enter="info" id="enterMassage"><!-- Deleted Message icon by Icons8 --><img class="icon icons8-Deleted-Message" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADJ0lEQVRoQ+2Zj5FMQRDGv4vAZYAIEAEiQASI4IgAESACRIAIEAEXwREBIqB+6vVVb79+82b3Zue9VddVW7V/5vX01/11T0/vkQ5cjg7cfl0CWDqCUxG4JumlpJuSeL+kfJf0TdJTSbzfkAwABn+VdLyk1cnevyTdiiAyAB8k3VuZ8WbOR0n3vW0ZgJ8r9L7ZDIWuzwH4U0GzngEq2pNF4L8F8EnS46wSNA4HReSNpLuD3mYRMEWvJL2QRFVoKVS9Z5KeDEqNHc0BoB/jn0t63QjByaDPl+69AvBVAVp93hHInYEu2WHZHACbvZV0NTEWANvkh/EcnVF+SHrknNKMQrYRHIU+V5LN5/Ij8tyr+D3oRYeX5gBQjiGAgLtRpvIj47k9Sy6hLysMewFgG0MFaHU7AcKpCa0QymLG8y8DXUZNmtO3VwC2Tyk/svyOPC/VgC4AavKDNVM8Xw2AUn6UeL4qADE/+ExZLPF8lQBKRm3zG7exG+6BjQb0ELpRbKfEcv5w9qwGwENJVC/u3bwQvM2Lk/1dCBNr+H7jqrtEBLgSMjCYGxaQM1zkueKaAAKA59IbAIZbu1ybB9CH9j2VngDocbLWowYIAAAykl4AoM37sDuHGpyOExAmD+RGbBYfBDr9U9cLwFngPMZjJHymlyKhERKXM8MS1oMYTSR6AcAgmjkTb7x9BwiEtSYZiFEUekTAexjjqCoYUiPQzg+yLELnz2YA6Mmzy0rNhraG4ZO1Dowprc57j1urPaWXqPmIsA7KMV4sAmgxWvSOie1wDYjMeHtu9iTmgAHpRaJQA2BEB+fYSLtJp5fG69RtQp9d4ufo5CkUmzGeLRnvI2TVyb47jXTs8Q9N9OZowlzwRqRzVRLPeXfb32MZpUgwNvQ9jZVZn9hEn3Gmb96qyui2BtaspyJ5KnoQPmGJFiAy47lHjxrAHhQCYNZKAIJWYuMPi+Gc4JSO/xBVtxI1Ht1lTbdmbhfjap/ZBcRkJ8qmvSjkAUIZgMyVZzjP3cFfaEaOWgKAGQEQXiSsXdqp81QnjC4anh7LtTxY07olI9DED5cAmrjxAkr+Agl5vDEtk6HMAAAAAElFTkSuQmCC">个人消息</a></li><li class="center-li"><a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107#" data-enter="member" id="enterVip"><!-- VIP icon by Icons8 --><img class="icon icons8-VIP" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACUElEQVRoQ+2ZgTHFQBCG/1cBKkAF6EAJVEAHqAAVoAJUgApQATqgAnRgvpnbN/ciuVzyLpc3N7mZjPGy2b1//3/v9pKZChmzQnBoArJqTE6MTIwMlIHipXUi6WCg5C3r9lHSTdVJHSMAeHDGP8tGTfz8uiSSfCgJQPNRB+Ra0taKM/Ip6bQNyIWkfXclTmgSd7Xzq2Okavgiid8Ydm+s3/w5kOygtIpl5FgSDKDLMQb1SvbvKqrozEgxQMZgIRRz6WJHXmMMJGSTn4qdDBRTI8UACdUFvdiapG1veaYf+pb05Vod9H0u6dLT+nPFKfXH/Zg6HKTYWduPJJ1JokczKd66ppN+qAkIQHmefQIfJGWvZr/KUuy7kt4kPXlNpoFjUu8BIK9eP0cS6Gr9hDQpoTcjbTXCjr8pacNlFVn9ukzbclknLR8IzF01AMm2s1s2OSMACoY4+Fib3SQtbK3twJba8mvNGEkGpG0TNHndO0aQiMkqxIjvFwZhfuGw1BC4t7SsZQ+tKGSX1Yu/SIws2mhixJdWKFlZit0mYPLif19WsTXSxrp/vzcjbcVOEORlyy96Z7WywfNc1AOX2WKzcFxtQJOsRmKAdMloV9tkQLoGHtq+t7Riin3IyWct9iGBVH33ZqSYGikGSE7ZxMTqLa2xXsbVxbUN9t+b0Jg3jTFZymnTm5Gck4yJZR0ztTsfoc8KII85esYET2Vje0rUZwWC0gOBeCfVDBL5+XD9mvV1QUYSxczrpvhviHnTmSDaxEiCJCZ1MTGSNJ0JnBXDyB+g+t0zvVVGewAAAABJRU5ErkJggg==">会员管理</a></li></ul></div><hr><div class="card-sets clearfix"><a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" id="logout">安全退出</a></div></div></div></div><div class="user-massage" style="display: inline-block;"><span>消息</span><span class="header-massage-count" style="display: none;">0</span></div></li><!-- <li class="al-nologin"><a href="" target="_blank" id="logout">退出</a></li> --></ul></nav></div></header>
+
+    <!-- 需要判断，没有广告时，margin-top:81 -->
+    <div class="" id="page-first" style="margin-top:106px"></div>
+    <div class="am-container">
+        <div class="am-g" id="labContent">
+            <div style="margin-top:13px">
+                <div class="lab-detail-left xn-border mod-new" style="float: left">
+                    <div class="title-blockquote" style="border-bottom: 1px solid #eee;font-size: 16px;color: #555;">
+                        <p class="xn-1-title " id="lab_title" style="font-size: 20px;">hbase基本操作</p>
+                    </div>
+                    <div style="overflow:hidden;">
+                        <div style="float: left; ">
+                            <!-- 实验介绍： -->
+                        </div>
+                        <div style="margin-left: 5px; margin-top: 10px;" id="description"><p>- HBase shell<br>- DDL与DML操作</p></div>
+                    </div>
+                    <div style="overflow:hidden;">
+                        <div style="float: left; ">
+                            <!-- 实验指导 -->
+                        </div>
+                        <div style="" id="tutorial"><h2 style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;text-align:center;"><span class="15" style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-weight:normal;font-size:14.0000pt;"><font face="微软雅黑">精品课程推荐</font></span><b><span class="15" style="font-family: 微软雅黑; font-size: 14pt;"></span></b></h2><p class="MsoNormal" style="text-align:center;"><b><span style="font-family: 微软雅黑; font-size: 14pt;"><font face="微软雅黑">使用</font></span></b><b><span style="font-family: 微软雅黑; font-size: 14pt;">K</span></b><b><span style="font-family: 微软雅黑; font-size: 14pt;">eras快速构造深度学习模型</span></b><b><span style="font-family: 微软雅黑; color: rgb(255, 0, 0); font-size: 14pt;"><font face="微软雅黑">实战</font></span></b><b><span style="font-family: 微软雅黑; font-size: 14pt;"></span></b></p><p class="MsoNormal"><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:4.0000pt;mso-font-kerning:1.0000pt;"></span></p><p class="p" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;line-height:21.0000pt;"><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">畅销书作者、</span><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">两位顶尖的</span><b><span style="font-family: 微软雅黑; color: rgb(255, 0, 0); font-size: 12pt;"><font face="微软雅黑">微软</font>/谷歌</span></b><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">数据科学家，</span><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">7次</span><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">直播互动</span><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">，</span><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">分享珍贵学习经验，并详细讲解前沿实战案例！</span><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;"></span></p><p class="p" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;line-height:21.0000pt;"><span style="mso-spacerun:&#39;yes&#39;;font-family:微软雅黑;font-size:12.0000pt;mso-font-kerning:0.0000pt;">稀牛学院</span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">为每名学员配备</font></span><b><span style="font-family: 微软雅黑; color: rgb(255, 0, 0); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">足量</font>GP</span></b><b><span style="font-family: 微软雅黑; color: rgb(255, 0, 0); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);">U</span></b><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">的云实验环境，</font>2个月免费使用权限</span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">！</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;line-height:21.0000pt;"><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">报名</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">即可获赠</font></span><b><span style="font-family: 微软雅黑; color: rgb(46, 117, 181); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">《</font>Keras快速上手：基于Python的深度学习实战》</span></b><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"><font face="微软雅黑">实体书！</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt;"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"><font face="微软雅黑">项目案例列表</font></span><span style="font-family: 微软雅黑; color: rgb(46, 117, 181); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);">@数据+代码+案例讲解</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt;"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);">1</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"><font face="微软雅黑">深度学习案例操作</font></span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt;"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);">2 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);">Keras入门案例操作</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt; background: rgb(255, 255, 255);"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">3 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">基于</font>dual encoder LSTM的深度学习对话机器人案例</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt;"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt; background: rgb(255, 255, 255);"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">4 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">基于卷积网络</font>LSTM的文字生成案例</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt; background: rgb(255, 255, 255);"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">5 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">单层</font>LSTM与SARIMA模型在单变量时间序列预测中的应用</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt;"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt; background: rgb(255, 255, 255);"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">6 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">多自变量</font>LSTM在股价预测中的示例</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt;"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);">7 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"><font face="微软雅黑">基于深度推荐系统对电影数据进行推荐</font></span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt; background: rgb(255, 255, 255);"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">8 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">基于全连接模型的手写数字识别</font></span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt;"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt; background: rgb(255, 255, 255);"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">9 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">基于</font>VGG16的迁移模型用于手写数字识别</span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></span></p><p class="p" style="margin: 0pt; text-indent: 0pt; padding: 0pt; line-height: 20pt;"><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);">10 </span><span style="font-family: 微软雅黑; color: rgb(62, 62, 62); letter-spacing: 0pt; font-size: 9pt; background: rgb(255, 255, 255);"><font face="微软雅黑">基于卷积网络的电影评分情感分析</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background: rgb(255, 255, 255);"></span></p><p class="p" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;text-align:center;background:rgb(255,255,255);"><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></span></p><p class="p" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;text-align:center;background:rgb(255,255,255);"><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">限时团购</font> </span><b><span style="font-family: 微软雅黑; color: rgb(255, 0, 0); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">仅需</font>499元</span></b><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"></span></p><p class="p" style="margin-top:0.0000pt;margin-right:0.0000pt;margin-bottom:0.0000pt;margin-left:0.0000pt;text-indent:0.0000pt;padding:0pt 0pt 0pt 0pt ;mso-pagination:widow-orphan;text-align:center;background:rgb(255,255,255);"><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">扫码获取</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">课程</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><font face="微软雅黑">详情</font></span><span style="font-family: 微软雅黑; color: rgb(51, 51, 51); letter-spacing: 0pt; font-size: 12pt;"></span></p><p class="MsoNormal" style="text-align:center;"><img src="./xiniu_ex1_files/936165975861104640.jpg" title="req.body.pictitle" alt="1512034303(1).jpg"></p></div>
+                    </div>
+
+                </div>
+                <!-- 作品展示模块 -->
+                <div id="guding" class="lab-detail-left xn-border mod-new " style="float: left;">
+
+                    <div class="title-blockquote" style="border-bottom: 1px solid #eee;font-size: 16px;color: #555;">
+                        <p class="xn-1-title " id="" style="font-size: 20px;">
+                            作品展示
+                        </p>
+                    </div>
+
+
+                    <div class="am-g" style="margin-left: 5px;margin-top: 30px;">
+                        <div class="am-u-lg-12">
+                            <div class="am-input-group">
+                                <input type="text" class="am-form-field" placeholder="请输入作品名或者作品发布者" id="input_val" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAx9JREFUWAndV79LY0EQnjySSAQ1OUG4OxvxR5BALggBi0BEIYUYtLC43v8ghZVgY3V9/oUjpMovEBvRSsGAHrY2Yi7BwlgEREXNzffMLnnP91bzkiDcQNjdmdlvvt3ZnbdxEcvOzs73p6enX9xdaDab36DrlbhcripjHbjd7s2tra2/ZlxXK/gfDjxqNvZyzERumMQPMwkNK+93cCwEMVq7bFiXxqMFg6a/gzextF7nXMXfKhZ24FPl/yYwOztLqVSK0NpJX3cgFArR8PAwobWTvhLgu6/HFa0Vib4SsApo1hkIDAwM0OTkJAUCAbMfObW9ATIp3GLs9/tpY2ODhoaG6OXlhQqFAp2dnelmpzaBrWrlDszPz+vB4axpGi0uLsp5Tm0SQNGRBBQ+fTVJAsfHx9RoNPRgSMH+/r4M7NQmARQd1/b2dlPYcdDGx8epXq/T7e2tUOutymZwfGfAV7LGLoet98GVgcA7c3tqZiJ1JhGRKegp+gfA+Mv4Be+DTyPQ4hiXdeADpG1dUCei0ShNT0/TyMgI3d/fU61Wo3K5TBcXF7bzeBe+dk0gHA7TysoKeb1eGQgHFkRmZmZod3eXTk5OpM3c6ToFExMThuDPz88yBgpaIpHQy7hUmjpd70CxWCSkYHBwkEqlElUqFYrFYrS0tKSH8ng8uv36+toU+nXo5utQtXqrWXpbKFG0MpkMYeV8qnUP1JF2EQWuXSf6SMGBGDhtHx4eZHCsOB6PS6jLy0u6u7uTY3NHQ0XiXbgxG5yMkfP19XUaGxvTp2NH9vb2lFAa/qngHwuT+I10KL0VRp5La2trFAwGdS+kJp/PU7Wqhnx9MymAzab2b4ewIfjq6ipFIhFdhfOQy+Xo/PxcuNi2Xd8CICeTSRn88fGRstmssgC1s+mawPLyMs3NzUlMrB53Hz8hR0dHdHp6KoaGtmsCU1NTBkCfz0f4tQtqhJ10XAk53/ie90SA5WQHDjn6T8EgnU4TDqFKcCNs5LBjAqgbfL8T+J4DtL322wSxVDNpPEg2O04B140rnhhhgAy20BJdocQczAUGsP4BPJYni4VMj2AAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                                <span class="am-input-group-btn">
+                                <button class="am-btn am-btn-default" type="button" id="search_id">作品搜索</button>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style="margin-top: 20px;margin-left: 5px">
+                        <ul class="am-list list_content"> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104325/2017180138-%E9%BE%9A%E5%8F%8C-%E5%AE%9E%E9%AA%8C5.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180138-龚双-实验5</a><span style="padding:12px;position:absolute;right:-7px;">2017180138</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104324/2017180163-%E6%9B%B9%E6%95%AC%E5%A1%91-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180163-曹敬塑-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180163</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104322/2017180141-%E5%88%98%E5%9B%BD%E5%8D%8E-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180141-刘国华-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180141</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104321/2017180142-%E9%AD%8F%E6%81%BA%E7%90%B3.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180142-魏恺琳</a><span style="padding:12px;position:absolute;right:-7px;">2017180142</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104319/2017180136%E6%9D%8E%E6%89%BF%E9%BE%99%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180136李承龙实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180136</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104318/2017180156-%E5%88%98%E7%92%90-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180156-刘璐-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180156</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104317/2017180137%20%E9%83%BD%E9%87%91%E8%B6%85%20%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180137 都金超 实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180137</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/102612/2017180892-%E6%B5%8B%E8%AF%95-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180892-测试-实验五</a><span style="padding:12px;position:absolute;right:-7px;">学生1</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/100154/2017180191_%E5%AD%99%E7%BE%8E%E6%9D%B0_%E5%AE%9E%E9%AA%8C5.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180191_孙美杰_实验5</a><span style="padding:12px;position:absolute;right:-7px;">用户6817_95</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/100154/2017180191--%E5%AD%99%E7%BE%8E%E6%9D%B0-%E5%AE%9E%E9%AA%8C5.ipynb?flush_cache=true" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180191--孙美杰-实验5</a><span style="padding:12px;position:absolute;right:-7px;">用户6817_95</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104332/2017180166-%E6%A2%81%E5%8B%A4%E8%90%B1-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180166-梁勤萱-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180166</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104330/2017180139_%E6%9D%8E%E5%B0%91%E9%A3%9E_%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180139_李少飞_实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180139</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104329/2017180147_%E6%9D%8E%E6%9C%A8%E7%99%BD_%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180147_李木白_实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180147</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104328/2017180169_%E5%BA%B7%E5%81%A5_%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180169_康健_实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180169</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104327/2017180168-%E9%BB%84%E5%8D%9A%E7%90%AA-%E5%AE%9E%E9%AA%8C5.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180168-黄博琪-实验5</a><span style="padding:12px;position:absolute;right:-7px;">2017180168</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104343/2017180154%E9%82%A2%E6%98%8E%E7%A3%8A.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180154邢明磊</a><span style="padding:12px;position:absolute;right:-7px;">2017180154</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104341/2017180149%E5%AE%9E%E9%AA%8C%E4%BA%94-%E8%B0%A2%E7%BB%A7%E5%B0%A7.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180149实验五-谢继尧</a><span style="padding:12px;position:absolute;right:-7px;">2017180149</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104340/2017180150-%E5%90%B4%E4%BA%9A%E6%9D%B0-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180150-吴亚杰-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180150</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104339/2017180201%E7%8E%8B%E6%B6%9B.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180201王涛</a><span style="padding:12px;position:absolute;right:-7px;">2017180201</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104338/2017180144%E5%B8%96%E9%BE%99%E9%A3%9E%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180144帖龙飞实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180144</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104355/2017180182-%E5%BC%A0%E9%9B%A8%E8%96%87-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180182-张雨薇-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180182</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104353/2017180179-%E5%BC%A0%E5%A4%A9%E5%85%83-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180179-张天元-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180179</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104352/2017180178-%E4%B8%81%E5%AE%81.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180178-丁宁</a><span style="padding:12px;position:absolute;right:-7px;">2017180178</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104351/2017180175-%E9%87%91%E6%99%93%E8%8A%99-%E5%AE%9E%E9%AA%8C5.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180175-金晓芙-实验5</a><span style="padding:12px;position:absolute;right:-7px;">2017180175</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104350/2017180174-%E8%93%9D%E8%8E%89-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180174-蓝莉-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180174</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104368/2017180199-%E7%9F%B3%E5%87%AF-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180199-石凯-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180199</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104365/2017180195-%E7%8E%8B%E5%AD%90%E8%8F%A1-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180195-王子菡-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180195</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104365/2017180195--%E7%8E%8B%E5%AD%90%E8%8F%A1--%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180195--王子菡--实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180195</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104364/2017180194-%E9%A1%BE%E8%B6%85-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180194-顾超-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180194</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104362/2017180190-%E5%8D%9C%E5%A4%A9%E5%AE%87-%E5%AE%9E%E9%AA%8C5.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180190-卜天宇-实验5</a><span style="padding:12px;position:absolute;right:-7px;">2017180190</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104379/2017180213_%E6%9D%8E%E6%99%93%E6%AC%A2_%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180213_李晓欢_实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180213</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104378/2017180211_%E6%9D%8E%E6%8C%AF%E9%A3%9E_%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180211_李振飞_实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180211</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104377/2017180210-%E7%8E%8B%E6%99%8B%E5%8D%87-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180210-王晋升-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180210</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104376/2017180209-%E5%BE%90%E7%BB%B4-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180209-徐维-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180209</span></li> <li><a href="http://www.xiniuedu.com:58080/url/www.xiniuedu.com/nas/xiniulab/publish/104374/2017180207-%E6%9C%B1%E9%95%BF%E5%9F%8E-%E5%AE%9E%E9%AA%8C%E4%BA%94.ipynb" target="_blank" class="am-text-truncate textunder" title="点击查看详情">2017180207-朱长城-实验五</a><span style="padding:12px;position:absolute;right:-7px;">2017180207</span></li></ul>
+                    </div>
+
+                    <!-- 加载更多开始 -->
+                    <div class="am-g" style="margin-top: 20px;margin-left: 5px">
+                        <div class="am-u-sm-12 am-u-sm-centered" id="load_more">加载更多</div>
+                    </div>
+                    <!-- 加载更多结束 -->
+
+
+                </div>
+
+
+                <!-- style="position:fixed; top:107px; left:840px;" -->
+
+                <div class="lab-detail-right xn-border mod-new mod" style="margin-top: -6px;">
+                    <div class="title-blockquote" style="border-bottom: 1px solid #eee;font-size: 16px;color: #555;">
+                        <!-- 开始实验 -->
+                        <h3 class="xn-1-title " style="font-size: 20px;">开始实验</h3>
+                    </div>
+                    <div style="margin-top:5px;margin-left: 2px;" id="level">难度级别：1</div>
+                    <div style="margin-top:5px;margin-left: 2px;" id="price">积分：100</div>
+                    <div style="margin-top:5px;margin-left: 2px;" id="duration">实验时长：180分</div>
+                    <br>
+                    <div>
+
+                        <div id="loadDiv" style="display:none; background-color:#eee;      margin-top: 30px;   height:16px;     width:150px;    border:1px solid #bbb;     color:#222;">
+                            <div class="waitBar" style=" background-color:#6CAF00; transition: width 10s;-moz-transition: width 10s;-webkit-transition: width 10s;-o-transition: width 10s;	/* Opera */ height:16px; width:0; "></div>
+                        </div>
+
+                        <!-- <button class="am-btn am-btn-qa " style="margin-top: 30px;display: inline-block" id='startLab'>立即实验</button> -->
+                        <div class="p-play  button5" style="float: right;margin-top: 30px;display: inline-block">
+                            <span id="startLab" class="p-btn">立即实验</span>
+                        </div>
+
+                        <div class="p-play  button5" style="margin-top: 30px;margin-right: 5px;float:right;">
+                            <span id="continueLab" class="p-btn" style="display:none;">继续实验</span>
+                        </div>
+                        <!-- p-btn1 -->
+                        <!-- <button class="am-btn am-btn-qa button6 p-btn1" style="margin-top: 30px;margin-right: 10px;"  id="continueLab">继续实验</button> -->
+                    </div>
+                    <a id="openNewPage" style="float: right;margin-top:10px;color:blue"></a>
+                    <a id="openNewPageSpecail" style="float: right;margin-top:10px;color:blue"></a>
+                    <div style="margin-top:72px">
+                    </div>
+
+                </div>
+                <!-- style="position:fixed; top:400px; left:850px;" -->
+                <div class="lab-detail-right xn-border mod-new">
+                    <div style="float: right; width:283px;height:auto;">
+                        <div class="title-blockquote" style="border-bottom: 1px solid #eee;font-size: 16px;color: #555; margin-left: -20px;">
+                            <!-- <span style="font-size: 24px;">实验目录</span> -->
+                            <h3 class="xn-1-title " style="font-size: 20px;">实验目录</h3>
+                        </div>
+                        <div class="am-panel-bd" style="border: 0px solid; margin-left: -33px;">
+                            <ul class="section-list">
+                            <li lab-id-wlf="40"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验1：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="40">  操作指导视频与入门操作练习</span></p></li><li lab-id-wlf="73"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验2：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="73">  Hadoop单机安装</span></p></li><li lab-id-wlf="74"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验3：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="74">  HDFS安装及基本操作</span></p></li><li lab-id-wlf="106"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验4：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="106">  hbase简介与单机安装</span></p></li><li lab-id-wlf="107" style="color: rgb(32, 154, 251);"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验5：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="107">  hbase基本操作</span></p></li><li lab-id-wlf="102"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验6：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="102">  hive安装配置</span></p></li><li lab-id-wlf="100"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验7：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="100">  hive基本操作</span></p></li><li lab-id-wlf="1022"><p class="section-title-content" style="vertical-align:top;"><span style="position:absolute;top:0px;">实验8：</span> <span class="section-experiment" style="cursor:pointer;display:inline-block;width: 60%; position:relative;left:55px;" lab-id-wlf="1022">  Spark的安装</span></p></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="back-to-top" style="display: none;"><a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107#top"><span></span></a></p>
+
+        </div>
+
+
+
+        <!--qr -->
+        <div id="qrcode" class="modal-in" style="padding:0; display: none; ">
+            <div class="modal-header">
+                <h1>
+                    <span class="modal-header-active">微信支付</span>
+                </h1>
+                <!-- <button type="button" class="modal-close" data-dismiss="modal" hidefocus="true"></button> -->
+                <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close " id="closeQR"></span></a>
+            </div>
+            <div class="modal-body text-center">
+                <div class="">
+                    <div class="qrcode" id="qrImg"></div>
+                    <p class="qrtip">您正在购买<strong class="js-order" id="buyType"></strong><br>微信扫描二维码以完成支付</p>
+                    <div class="price " id="priceshow"><em>￥</em>
+                        <span id="moneyShow"></span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+        window.onscroll = function() {
+            let t = document.documentElement.scrollTop || document.body.scrollTop;
+            let top_nav = document.getElementById("amz-header");
+            if (t >= 26) {
+                top_nav.style.background = "#f4f4f4";
+            } else {
+                top_nav.style.background = "#ffffff";
+            }
+        }
+
+        function tiaozhuan() {
+            window.open('personal/public/html/personal.html?activity=center');
+        }
+        $(document).ready(function() {
+            //首先将#back-to-top隐藏
+            $("#back-to-top").hide();
+            //当滚动条的位置处于距顶部600像素以下时，跳转链接出现，否则消失
+            $(function() {
+                $(window).scroll(function() {
+                    if ($(window).scrollTop() > 600) {
+                        $("#back-to-top").fadeIn(500);
+                    } else {
+                        $("#back-to-top").fadeOut(500);
+                    }
+                });
+                //当点击跳转链接后，回到页面顶部位置
+                $("#back-to-top").click(function() {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+            });
+        });
+        var lab_id = GetQueryString('lab_id')
+            // alert(lab_id);
+            // var lab_id1 = $("li").attr("tagName")
+            // alert(lab_id1)
+            // section-list
+            // $(function() {
+            //        $('#div').find('li').each(function() {
+            //            $(this).click(function() {
+            //                console.log($(this).index());
+            //            })
+            //        })
+
+        //    })
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+
+        window.onload = function() {
+            setTimeout(function() {
+                $('.section-list').find('li').each(function() {
+                        // alert($(this).attr("lab-id-wlf")+"lab_id"+lab_id)
+                        if ($(this).attr("lab-id-wlf") == lab_id) {
+                            // alert("相等")
+                            $(this).css({
+                                "color": "#209afb"
+                            });
+                        }
+                    })
+                    // var lab_id1 = $("ul li").attr("lab-id-wlf");
+                    // alert("haha ");
+            }, 1250);
+        }
+    </script>
+
+
+    <!--Le javascript==================================================-->
+    <!--Placed at the end of the document so the pages load faster-->
+    <!--<script src="plugin/jquery.js"></script>-->
+    <script src="./xiniu_ex1_files/amazeui.min.js"></script>
+    <script src="./xiniu_ex1_files/app.js"></script>
+    <!-- <script src="public/js/cookie.js"></script> -->
+    <script src="./xiniu_ex1_files/wind.js"></script>
+    <!-- <script src="/themes/simplebootx/Public/simpleboot/bootstrap/js/bootstrap.min.js"></script> -->
+    <!-- <script src="public/js/frontend.js"></script> -->
+    <script src="./xiniu_ex1_files/searchbox.js"></script>
+    <!-- <script src="AmazeUI-2.7.2/js/bindShare.js"></script> -->
+
+
+
+    <script src="./xiniu_ex1_files/common.js"></script>
+    <script src="./xiniu_ex1_files/lab.js"></script>
+    <script src="./xiniu_ex1_files/labMain.js"></script>
+    <script type="text/javascript" src="./xiniu_ex1_files/sweetalert.min.js"></script>
+    <script type="text/javascript" src="./xiniu_ex1_files/sweetalert-dev.js"></script>
+    <script type="text/javascript">
+        window._pt_lt = new Date().getTime();
+        window._pt_sp_2 = [];
+        _pt_sp_2.push('setAccount,1e4ef4b2');
+        var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        (function() {
+            var atag = document.createElement('script');
+            atag.type = 'text/javascript';
+            atag.async = true;
+            atag.src = _protocol + 'js.ptengine.cn/1e4ef4b2.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(atag, s);
+        })();
+    </script>
+
+
+<!-- 导航栏的登录注册，是公共部分 -->
+    <div class="modal-mask" style="display: none">&nbsp;</div>
+    <!-- 微信登录框 默认微信登录-->
+                             <div id="weichat" class="modal-in" style="display: none;padding-bottom: 0px;">
+                              <div class="modal-header">
+                                  <h1>
+                                      <span id="register-to-signin">登录</span>
+                                      <span id="signin-to-register">注册</span>
+                                      <span class="modal-header-active">微信</span>
+                                  </h1>
+                                  <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close "></span></a>
+                              </div>
+                              <div class="modal-body">
+                                 <div style="text-align: center;margin: 30px;">
+                                  <img src="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" id="erweima" style="width:200px;height:200px;">
+                              </div>
+                          </div>
+                          <div class="modal-bottom-back">&lt;账号登录</div>
+                      </div>
+    <!-- 登录框 -->
+                      <div id="signin" class="modal-in" style="display: none">
+                          <div class="modal-header">
+                              <h1>
+                                  <span class="modal-header-active">登录</span>
+                                  <span id="signinamy">注册</span>
+                                  <span id="weichatamy">微信</span>
+                              </h1>
+                              <!-- <button type="button" class="modal-close" data-dismiss="modal" hidefocus="true"></button> -->
+                              <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close "></span></a>
+                          </div>
+                          <div class="modal-body" style="margin-top: 30px">
+                              <div>
+                                  <div class="am-input-group">
+                                      <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+                                      <input type="text" name="account" class="am-form-field" id="loginMobile" placeholder="手机号/邮箱" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAx9JREFUWAndV79LY0EQnjySSAQ1OUG4OxvxR5BALggBi0BEIYUYtLC43v8ghZVgY3V9/oUjpMovEBvRSsGAHrY2Yi7BwlgEREXNzffMLnnP91bzkiDcQNjdmdlvvt3ZnbdxEcvOzs73p6enX9xdaDab36DrlbhcripjHbjd7s2tra2/ZlxXK/gfDjxqNvZyzERumMQPMwkNK+93cCwEMVq7bFiXxqMFg6a/gzextF7nXMXfKhZ24FPl/yYwOztLqVSK0NpJX3cgFArR8PAwobWTvhLgu6/HFa0Vib4SsApo1hkIDAwM0OTkJAUCAbMfObW9ATIp3GLs9/tpY2ODhoaG6OXlhQqFAp2dnelmpzaBrWrlDszPz+vB4axpGi0uLsp5Tm0SQNGRBBQ+fTVJAsfHx9RoNPRgSMH+/r4M7NQmARQd1/b2dlPYcdDGx8epXq/T7e2tUOutymZwfGfAV7LGLoet98GVgcA7c3tqZiJ1JhGRKegp+gfA+Mv4Be+DTyPQ4hiXdeADpG1dUCei0ShNT0/TyMgI3d/fU61Wo3K5TBcXF7bzeBe+dk0gHA7TysoKeb1eGQgHFkRmZmZod3eXTk5OpM3c6ToFExMThuDPz88yBgpaIpHQy7hUmjpd70CxWCSkYHBwkEqlElUqFYrFYrS0tKSH8ng8uv36+toU+nXo5utQtXqrWXpbKFG0MpkMYeV8qnUP1JF2EQWuXSf6SMGBGDhtHx4eZHCsOB6PS6jLy0u6u7uTY3NHQ0XiXbgxG5yMkfP19XUaGxvTp2NH9vb2lFAa/qngHwuT+I10KL0VRp5La2trFAwGdS+kJp/PU7Wqhnx9MymAzab2b4ewIfjq6ipFIhFdhfOQy+Xo/PxcuNi2Xd8CICeTSRn88fGRstmssgC1s+mawPLyMs3NzUlMrB53Hz8hR0dHdHp6KoaGtmsCU1NTBkCfz0f4tQtqhJ10XAk53/ie90SA5WQHDjn6T8EgnU4TDqFKcCNs5LBjAqgbfL8T+J4DtL322wSxVDNpPEg2O04B140rnhhhgAy20BJdocQczAUGsP4BPJYni4VMj2AAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                                  </div>
+                                  <div class="input-tip-wrap" data-error-hint="请输入正确的账号"></div>
+                                  <div class="am-input-group">
+                                    <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+                                    <input type="password" name="password" class="am-form-field" id="loginPassword" placeholder="请输入密码" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAx9JREFUWAndV79LY0EQnjySSAQ1OUG4OxvxR5BALggBi0BEIYUYtLC43v8ghZVgY3V9/oUjpMovEBvRSsGAHrY2Yi7BwlgEREXNzffMLnnP91bzkiDcQNjdmdlvvt3ZnbdxEcvOzs73p6enX9xdaDab36DrlbhcripjHbjd7s2tra2/ZlxXK/gfDjxqNvZyzERumMQPMwkNK+93cCwEMVq7bFiXxqMFg6a/gzextF7nXMXfKhZ24FPl/yYwOztLqVSK0NpJX3cgFArR8PAwobWTvhLgu6/HFa0Vib4SsApo1hkIDAwM0OTkJAUCAbMfObW9ATIp3GLs9/tpY2ODhoaG6OXlhQqFAp2dnelmpzaBrWrlDszPz+vB4axpGi0uLsp5Tm0SQNGRBBQ+fTVJAsfHx9RoNPRgSMH+/r4M7NQmARQd1/b2dlPYcdDGx8epXq/T7e2tUOutymZwfGfAV7LGLoet98GVgcA7c3tqZiJ1JhGRKegp+gfA+Mv4Be+DTyPQ4hiXdeADpG1dUCei0ShNT0/TyMgI3d/fU61Wo3K5TBcXF7bzeBe+dk0gHA7TysoKeb1eGQgHFkRmZmZod3eXTk5OpM3c6ToFExMThuDPz88yBgpaIpHQy7hUmjpd70CxWCSkYHBwkEqlElUqFYrFYrS0tKSH8ng8uv36+toU+nXo5utQtXqrWXpbKFG0MpkMYeV8qnUP1JF2EQWuXSf6SMGBGDhtHx4eZHCsOB6PS6jLy0u6u7uTY3NHQ0XiXbgxG5yMkfP19XUaGxvTp2NH9vb2lFAa/qngHwuT+I10KL0VRp5La2trFAwGdS+kJp/PU7Wqhnx9MymAzab2b4ewIfjq6ipFIhFdhfOQy+Xo/PxcuNi2Xd8CICeTSRn88fGRstmssgC1s+mawPLyMs3NzUlMrB53Hz8hR0dHdHp6KoaGtmsCU1NTBkCfz0f4tQtqhJ10XAk53/ie90SA5WQHDjn6T8EgnU4TDqFKcCNs5LBjAqgbfL8T+J4DtL322wSxVDNpPEg2O04B140rnhhhgAy20BJdocQczAUGsP4BPJYni4VMj2AAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                                </div>
+                                 <div class="am-form-group">
+                            <div class="am-u-sm-10 remember-wrap">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked="" id="remember_me" @click="rememberMe"> 7天内自动登录
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                                <div class="input-tip-wrap" data-error-hint="密码不正确"></div>
+                                <div class="input-btn" id="loginBtn">登录</div>
+                                <div class="unlogin">
+                                  <div class="forgetpwd">忘记密码？</div>
+                                  <!-- <div id="" class="register-btn">去注册</div> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- 注册弹出框 -->
+                  <div id="register" class="modal-in" style="padding:0;display: none;">
+                      <div class="modal-header">
+                          <h1>
+                              <span id="amysignin">登录</span>
+                              <span class="modal-header-active">注册</span>
+                              <span id="amyweichat">微信</span>
+                          </h1>
+                          <!-- <button type="button" class="modal-close" data-dismiss="modal" hidefocus="true"></button> -->
+                          <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close "></span></a>
+                      </div>
+                      <div class="modal-body" style="margin-top: 30px">
+                          <div class="">
+                              <div class="am-input-group">
+                                  <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+                                  <input type="text" name="account" class="am-form-field" id="phoneNum" placeholder="手机号/邮箱" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                              </div>
+                              <div class="input-tip-wrap" data-error-hint="请输入正确的手机号/邮箱"></div>
+                              <div class="am-input-group">
+                                  <span class="am-input-group-label"><i class="am-icon-barcode am-icon-fw"></i></span>
+
+                                  <input type="text" class="am-form-field" id="registerValidCode" style="width:60%" placeholder="请输入验证码">
+                                  <input class="codebtn getcode" id="codebtn" type="button" value="获取验证码">
+
+                              </div>
+                              <div class="input-tip-wrap" data-error-hint="验证码错误"></div>
+                              <div class="am-input-group">
+                                <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+                                <input type="password" name="password" class="am-form-field" id="registerPassword" placeholder="设置密码，至少6位" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAx9JREFUWAndV79LY0EQnjySSAQ1OUG4OxvxR5BALggBi0BEIYUYtLC43v8ghZVgY3V9/oUjpMovEBvRSsGAHrY2Yi7BwlgEREXNzffMLnnP91bzkiDcQNjdmdlvvt3ZnbdxEcvOzs73p6enX9xdaDab36DrlbhcripjHbjd7s2tra2/ZlxXK/gfDjxqNvZyzERumMQPMwkNK+93cCwEMVq7bFiXxqMFg6a/gzextF7nXMXfKhZ24FPl/yYwOztLqVSK0NpJX3cgFArR8PAwobWTvhLgu6/HFa0Vib4SsApo1hkIDAwM0OTkJAUCAbMfObW9ATIp3GLs9/tpY2ODhoaG6OXlhQqFAp2dnelmpzaBrWrlDszPz+vB4axpGi0uLsp5Tm0SQNGRBBQ+fTVJAsfHx9RoNPRgSMH+/r4M7NQmARQd1/b2dlPYcdDGx8epXq/T7e2tUOutymZwfGfAV7LGLoet98GVgcA7c3tqZiJ1JhGRKegp+gfA+Mv4Be+DTyPQ4hiXdeADpG1dUCei0ShNT0/TyMgI3d/fU61Wo3K5TBcXF7bzeBe+dk0gHA7TysoKeb1eGQgHFkRmZmZod3eXTk5OpM3c6ToFExMThuDPz88yBgpaIpHQy7hUmjpd70CxWCSkYHBwkEqlElUqFYrFYrS0tKSH8ng8uv36+toU+nXo5utQtXqrWXpbKFG0MpkMYeV8qnUP1JF2EQWuXSf6SMGBGDhtHx4eZHCsOB6PS6jLy0u6u7uTY3NHQ0XiXbgxG5yMkfP19XUaGxvTp2NH9vb2lFAa/qngHwuT+I10KL0VRp5La2trFAwGdS+kJp/PU7Wqhnx9MymAzab2b4ewIfjq6ipFIhFdhfOQy+Xo/PxcuNi2Xd8CICeTSRn88fGRstmssgC1s+mawPLyMs3NzUlMrB53Hz8hR0dHdHp6KoaGtmsCU1NTBkCfz0f4tQtqhJ10XAk53/ie90SA5WQHDjn6T8EgnU4TDqFKcCNs5LBjAqgbfL8T+J4DtL322wSxVDNpPEg2O04B140rnhhhgAy20BJdocQczAUGsP4BPJYni4VMj2AAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                            </div>
+                            <div class="input-tip-wrap" data-error-hint="密码格式不正确"></div>
+                            <div class="input-btn" id="registerBtn">注册</div>
+                        </div>
+                    </div>
+                    <div class="modal-bottom-back">&lt;账号登录</div>
+                </div>
+
+      <!-- 邮箱注册弹出框 -->
+      <div id="mail-register" class="modal-in" style="padding:0;display: none;">
+        <div class="modal-header">
+          <h1>
+            <span id="register-to-signin">登录</span>
+            <span id="signin-to-register">注册</span>
+            <span class="modal-header-active">邮箱注册</span>
+          </h1>
+          <!-- <button type="button" class="modal-close" data-dismiss="modal" hidefocus="true"></button> -->
+          <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close "></span></a>
+        </div>
+        <div class="modal-body">
+          <div class="">
+            <div class="am-input-group">
+              <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+              <input type="email" name="account" class="am-form-field" id="email" placeholder="请输入邮箱" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+            </div>
+            <div class="input-tip-wrap" data-error-hint="请输入正确的邮箱"></div>
+            <div class="am-input-group">
+              <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+              <input type="password" name="password" class="am-form-field" id="mailRegisterPassword" placeholder="设置密码，至少6位" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAx9JREFUWAndV79LY0EQnjySSAQ1OUG4OxvxR5BALggBi0BEIYUYtLC43v8ghZVgY3V9/oUjpMovEBvRSsGAHrY2Yi7BwlgEREXNzffMLnnP91bzkiDcQNjdmdlvvt3ZnbdxEcvOzs73p6enX9xdaDab36DrlbhcripjHbjd7s2tra2/ZlxXK/gfDjxqNvZyzERumMQPMwkNK+93cCwEMVq7bFiXxqMFg6a/gzextF7nXMXfKhZ24FPl/yYwOztLqVSK0NpJX3cgFArR8PAwobWTvhLgu6/HFa0Vib4SsApo1hkIDAwM0OTkJAUCAbMfObW9ATIp3GLs9/tpY2ODhoaG6OXlhQqFAp2dnelmpzaBrWrlDszPz+vB4axpGi0uLsp5Tm0SQNGRBBQ+fTVJAsfHx9RoNPRgSMH+/r4M7NQmARQd1/b2dlPYcdDGx8epXq/T7e2tUOutymZwfGfAV7LGLoet98GVgcA7c3tqZiJ1JhGRKegp+gfA+Mv4Be+DTyPQ4hiXdeADpG1dUCei0ShNT0/TyMgI3d/fU61Wo3K5TBcXF7bzeBe+dk0gHA7TysoKeb1eGQgHFkRmZmZod3eXTk5OpM3c6ToFExMThuDPz88yBgpaIpHQy7hUmjpd70CxWCSkYHBwkEqlElUqFYrFYrS0tKSH8ng8uv36+toU+nXo5utQtXqrWXpbKFG0MpkMYeV8qnUP1JF2EQWuXSf6SMGBGDhtHx4eZHCsOB6PS6jLy0u6u7uTY3NHQ0XiXbgxG5yMkfP19XUaGxvTp2NH9vb2lFAa/qngHwuT+I10KL0VRp5La2trFAwGdS+kJp/PU7Wqhnx9MymAzab2b4ewIfjq6ipFIhFdhfOQy+Xo/PxcuNi2Xd8CICeTSRn88fGRstmssgC1s+mawPLyMs3NzUlMrB53Hz8hR0dHdHp6KoaGtmsCU1NTBkCfz0f4tQtqhJ10XAk53/ie90SA5WQHDjn6T8EgnU4TDqFKcCNs5LBjAqgbfL8T+J4DtL322wSxVDNpPEg2O04B140rnhhhgAy20BJdocQczAUGsP4BPJYni4VMj2AAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+            </div>
+            <div class="input-tip-wrap" data-error-hint="密码格式不正确"></div>
+            <div class="input-btn" id="mailRegisterBtn">注册</div>
+          </div>
+        </div>
+        <div class="modal-bottom-back">
+          &lt;账号登录</div>
+        </div>
+
+        <div id="forgetpwd" class="modal-in" style="padding:0; display:none">
+          <div class="modal-header">
+            <h1>
+              <span class="modal-header-active">找回密码</span>
+            </h1>
+            <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close "></span></a>
+          </div>
+          <div class="modal-body">
+            <div class="">
+              <div class="am-input-group">
+                <span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+                <input id="phonenumber" name="account" type="text" class="am-form-field" placeholder="请输入手机号/邮箱" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+              </div>
+              <div class="input-tip-wrap" data-error-hint="账号不正确"></div>
+              <div class="am-input-group">
+                <span class="am-input-group-label"><i class="am-icon-barcode am-icon-fw"></i></span>
+                <input id="codenumber" type="text" class="am-form-field" style="width:60%" placeholder="验证码">
+                <button id="sendcheck" class="codebtn" style="background-color:#209afb;color:#fff;">发送验证码</button>
+              </div>
+              <div class="input-tip-wrap" data-error-hint="验证码错误"></div>
+              <div class="input-btn" id="forget-to-setNew">下一步</div>
+            </div>
+          </div>
+          <div class="modal-bottom-back">
+            &lt;账号登录</div>
+          </div>
+          <div id="setNewpwd" class="modal-in" style="padding:0; display: none">
+            <div class="modal-header">
+              <h1>
+                <span class="modal-header-active">重置密码</span>
+              </h1>
+              <a href="http://www.xiniuedu.com/lab.html?task_id=1004&amp;lab_id=107" class="modal-close"><span class="am-icon-close "></span></a>
+            </div>
+            <div class="modal-body">
+              <div class="">
+                <div class="am-input-group">
+                  <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+                  <input type="password" name="password" id="firstNum" class="am-form-field" placeholder="请输入密码" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABKRJREFUWAnNl0tsVGUUxzvTTlslZUaCloZHY6BRFkp9sDBuqgINpaBp02dIDImwKDG6ICQ8jBYlhg0rxUBYEALTpulMgBlqOqHRDSikJkZdGG0CRqAGUuwDovQ1/s7NPTffnTu3zMxGvuT2vP7n8Z3vu+dOi4r+5xUoJH8sFquamZmpTqfTVeIfCARGQ6HQH83NzaP5xsu5gL6+vuVzc3NdJN1Kkhd8Ev1MMYni4uJjra2tt3wwLvUjCxgYGFg8Pj7+MV5dPOUub3/hX0zHIpFId0NDw6Q/jO4tZOzv76+Znp6+AOb5TBw7/YduWC2Hr4J/IhOD/GswGHy7vb39tyw2S+VbAC1/ZXZ29hKoiOE8RrIvaPE5WvyjoS8CX8sRvYPufYpZYtjGS0pKNoD/wdA5bNYCCLaMYMMEWq5IEn8ZDof3P6ql9pF9jp8cma6bFLGeIv5ShdISZUzKzqPIVnISp3l20caTJsaPtwvc3dPTIx06ziZkkyvY0FnoW5l+ng7guAWnpAI5w4MkP6yy0GQy+dTU1JToGm19sqKi4kBjY+PftmwRYn1ErEOq4+i2tLW1DagsNGgKNv+p6tj595nJxUbyOIF38AwipoSfnJyMqZ9SfD8jxlWV5+fnu5VX6iqgt7d3NcFeUiN0n8FbLEOoGkwdgY90dnbu7OjoeE94jG9wd1aZePRp5AOqw+9VMM+qLNRVABXKkLEWzn8S/FtbdAhnuVQE7LdVafBPq04pMYawO0OJ+6XHZkFcBQA0J1xKgyhlB0EChEWGX8RulsgjvOjEBu+5V+icWOSoFawuVwEordluG28oSCmXSs55SGSCHiXhmDzC25ghMHGbdwhJr6sAdpnyQl0FYIyoEX5CeYOuNHg/NhvGiUUxVgfV2VUAxjtqgPecp9oKoE4sNnbX9HcVgMH8nD5nAoWnKM/5ZmKyySRdq3pCmDncR4DxOwVC64eHh0OGLOcur1Vey46xUZ3IcVl5oa4OlJaWXgQwJwZyhUdGRjqE14VtSnk/mokhxnawiwUvsZmsX5u+rgKamprGMDoA5sKhRCLxpDowSpsJ8vpCj2AUPzg4uIiNfKIyNMkH6Z4hF3k+RgTYz6vVAEiKq2bsniZIC0nTtvMVMwBzoBT9tKkTHp8Ak1V8dTrOE+NgJs7VATESTH5WnVAgfHUqlXK6oHpJEI1G9zEZH/Du16leqHyS0UXBNKmeOMf5NvyislJPB8RAFz4g8IuwofLy8k319fUP1EEouw7L7mC3kUTO1nn3sb02MTFxFpsz87FfJuaH4pu5fF+reDz+DEfxkI44Q0ScSbyOpDGe1RqMBN08o+ha0L0JdeKi/6msrGwj98uZMeon1AGaSj+elr9LwK9IkO33n8cN7Hl2vp1N3PcYbUXOBbDz9bwV1/wCmXoS3+B128OPD/l2LLg8l9APXVlZKZfzfDY7ehlQv0PPQDez6zW5JJdYOXdAwHK2dGIv7GH4YtHJIvEOvvunLCHPPzl3QOLKTkl0hPbKaDUvlTU988xtwfMqQBPQ3m/4mf0yBVlDCSr/CRW0CipAMnGzb9XU1NSRvIX7kSgo++Pg9B8wltxxbHKPZgAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                </div>
+                <div class="input-tip-wrap" data-error-hint="密码格式不正确"></div>
+                <div class="am-input-group">
+                  <span class="am-input-group-label"><i class="am-icon-lock am-icon-fw"></i></span>
+                  <input type="password" name="password" class="am-form-field" id="secondNum" placeholder="确认密码" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABKRJREFUWAnNl0tsVGUUxzvTTlslZUaCloZHY6BRFkp9sDBuqgINpaBp02dIDImwKDG6ICQ8jBYlhg0rxUBYEALTpulMgBlqOqHRDSikJkZdGG0CRqAGUuwDovQ1/s7NPTffnTu3zMxGvuT2vP7n8Z3vu+dOi4r+5xUoJH8sFquamZmpTqfTVeIfCARGQ6HQH83NzaP5xsu5gL6+vuVzc3NdJN1Kkhd8Ev1MMYni4uJjra2tt3wwLvUjCxgYGFg8Pj7+MV5dPOUub3/hX0zHIpFId0NDw6Q/jO4tZOzv76+Znp6+AOb5TBw7/YduWC2Hr4J/IhOD/GswGHy7vb39tyw2S+VbAC1/ZXZ29hKoiOE8RrIvaPE5WvyjoS8CX8sRvYPufYpZYtjGS0pKNoD/wdA5bNYCCLaMYMMEWq5IEn8ZDof3P6ql9pF9jp8cma6bFLGeIv5ShdISZUzKzqPIVnISp3l20caTJsaPtwvc3dPTIx06ziZkkyvY0FnoW5l+ng7guAWnpAI5w4MkP6yy0GQy+dTU1JToGm19sqKi4kBjY+PftmwRYn1ErEOq4+i2tLW1DagsNGgKNv+p6tj595nJxUbyOIF38AwipoSfnJyMqZ9SfD8jxlWV5+fnu5VX6iqgt7d3NcFeUiN0n8FbLEOoGkwdgY90dnbu7OjoeE94jG9wd1aZePRp5AOqw+9VMM+qLNRVABXKkLEWzn8S/FtbdAhnuVQE7LdVafBPq04pMYawO0OJ+6XHZkFcBQA0J1xKgyhlB0EChEWGX8RulsgjvOjEBu+5V+icWOSoFawuVwEordluG28oSCmXSs55SGSCHiXhmDzC25ghMHGbdwhJr6sAdpnyQl0FYIyoEX5CeYOuNHg/NhvGiUUxVgfV2VUAxjtqgPecp9oKoE4sNnbX9HcVgMH8nD5nAoWnKM/5ZmKyySRdq3pCmDncR4DxOwVC64eHh0OGLOcur1Vey46xUZ3IcVl5oa4OlJaWXgQwJwZyhUdGRjqE14VtSnk/mokhxnawiwUvsZmsX5u+rgKamprGMDoA5sKhRCLxpDowSpsJ8vpCj2AUPzg4uIiNfKIyNMkH6Z4hF3k+RgTYz6vVAEiKq2bsniZIC0nTtvMVMwBzoBT9tKkTHp8Ak1V8dTrOE+NgJs7VATESTH5WnVAgfHUqlXK6oHpJEI1G9zEZH/Du16leqHyS0UXBNKmeOMf5NvyislJPB8RAFz4g8IuwofLy8k319fUP1EEouw7L7mC3kUTO1nn3sb02MTFxFpsz87FfJuaH4pu5fF+reDz+DEfxkI44Q0ScSbyOpDGe1RqMBN08o+ha0L0JdeKi/6msrGwj98uZMeon1AGaSj+elr9LwK9IkO33n8cN7Hl2vp1N3PcYbUXOBbDz9bwV1/wCmXoS3+B128OPD/l2LLg8l9APXVlZKZfzfDY7ehlQv0PPQDez6zW5JJdYOXdAwHK2dGIv7GH4YtHJIvEOvvunLCHPPzl3QOLKTkl0hPbKaDUvlTU988xtwfMqQBPQ3m/4mf0yBVlDCSr/CRW0CipAMnGzb9XU1NSRvIX7kSgo++Pg9B8wltxxbHKPZgAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                </div>
+                <div class="input-tip-wrap" data-error-hint="两次密码不同"></div>
+                <div class="input-btn" id="reConfirm">确定</div>
+              </div>
+            </div>
+            <div class="modal-bottom-back">
+              &lt;账号登录</div>
+            </div>
+    <footer class="al-footer amz-footer footer" style="padding-top: 10px;background-color: #ececec;">
+      <div style="width:100%;height:120px;" class=" am-container am-footer-con">
+        <!-- logo -->
+        <div class="footerCompanyLogo" style="position: absolute;width:20%;text-align:center;">
+          <div class="" style="">
+            <h2 style="margin:0;"><img src="./xiniu_ex1_files/logo.png" alt="" style="height: 65px;width: 160px;"></h2>
+        </div>
+        <div class="footer-name al-ft">北京惟数科技有限公司</div>
+    </div>
+    <!-- 相关信息 -->
+    <div style="margin-left:18%;position:absolute;width:50%;text-align:center;">
+      <div class="am-container am-footer-con al-ft">
+           <div style="margin-top: 50px; font-size:16px; color:#404040"><span>联系我们：info@bigdatadigest.cn</span></div>
+       </div>
+    </div>
+    <!-- 微信  -->
+    <div class="footerChat" style="margin-left: 75%; margin-top: 140px; position: absolute;width:20%;padding:0 10px;">
+      <div style="text-align:center;width:100px;">
+        <div style="margin-top: -130px;"><span>微信关注我们
+        </span></div>
+        <div style="margin-top: 10px;"><img src="./xiniu_ex1_files/weixinlogo.jpg" style="width:100px;height:100px;"></div>
+    </div>
+    </div>
+    </div>
+    <div class=" am-container al-footer-foot">
+        <span class="al-footer-name">Copyright 2017版权所有 稀牛学院 京ICP备17006708号</span>
+    </div>
+    </footer>
+    <div id="foot" style="display:none">
+    <div class="footer-name al-ft" id="companyName">北京惟数科技有限公司</div>
+    <div class=" am-container al-footer-foot">
+    <span class="al-footer-name">Copyright 2017版权所有 稀牛学院 京ICP备17006708号</span>
+    </div>
+    </div></body></html>
